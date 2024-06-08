@@ -161,7 +161,7 @@ CREATE TABLE IF NOT EXISTS "spoty" (
     "data" TEXT NOT NULL,
     "gg" INTEGER NOT NULL,
     "mm" INTEGER NOT NULL,
-    'ss' integer NOT NULL,
+    "ss" integer NOT NULL,
     "koszt" INTEGER,
     "dlugosc" INTEGER NOT NULL,
     "kod_rek_id" INTEGER NOT NULL,
