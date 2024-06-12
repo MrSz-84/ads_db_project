@@ -46,6 +46,7 @@ def add_1_field(data: list, table_name: str, field_name: str, type_: str, dtype:
                 con: sqlite3.Connection, cur: sqlite3.Cursor) -> None:
     """
     Skeleton function for adding data to up to three column tables.
+
     :param type_: String representing type of target where to add the data. Available table or view
     :param data: List of strings or integers representing table contents
     :param table_name: String representing name of the table into which data is going to be added
@@ -186,7 +187,7 @@ def get_id_for_placementy(fields: list[str], table_: str,
     """
     Gets IDs from reference tables to placementy table.
     Mainly connects other tables and data of singular ad emission via IDs with other tables.
-    This function populates one of two core tables in this DB.
+    This function populates one of core tables in this DB.
     Returns a bool for logic purposes and data to be added into placementy.
 
     :param fields: A list containing field / column names represented as a str

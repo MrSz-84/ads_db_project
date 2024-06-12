@@ -15,6 +15,7 @@ print('Program starting...')
 path = find.find(cf.FILE_PATH)
 
 # tworzenie dataframe
+# Dataframe creation
 df = pd.read_excel(path, sheet_name='Raport')
 df_wyd = pd.read_excel(cf.BROADCASTER)
 df_zas = pd.read_excel(cf.REACH)
@@ -23,6 +24,7 @@ print('DataFrame has been created...')
 
 
 # funkcje dla operacji na dataframe za pomocą lambdy
+# Creates string for day part in order of further analysis.
 def daypart(x: int) -> str:
     """
     Creates the information about the day part in which the ad was emitted.
@@ -42,7 +44,7 @@ def daypart(x: int) -> str:
 
 def ujednolicona(x: int) -> int:
     """
-    Returns unified duration od advertisements.
+    Returns unified duration of advertisements.
 
     :param x: Integer representing ad duration
     :return: a unified duration for table row

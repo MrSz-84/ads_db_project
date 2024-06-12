@@ -55,7 +55,7 @@ def add_1_field(data: list, table_name: str, field_name: str, type_: str, dtype:
 
     :param data: List of strings or integers representing table contents
     :param table_name: String representing name of the table into which data is going to be added
-    :param table_name: String representing name of the table into which data is going to be added
+    :param field_name: String representing name of the field/ column name
     :param type_: String representing type of target where to add the data. Available table or view
     :param dtype: String representing to what type data should be converted before upload
     :param con: Is a connection object, pointing to a DB
