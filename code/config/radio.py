@@ -6,7 +6,8 @@
 # into the DB.
 
 DB_PATH = '../bazy_danych/radio_ads.db'
-FILE_PATH = '../../Radio/Raporty Kantar/2024/6. Czerwiec/'
+DB_TEST = '../bazy_danych/radio_ads_test.db'
+FILE_PATH = '../../Radio/Raporty Kantar/2024/7. Lipiec/'
 SOURCE_PATH = './#kantar_output.xlsx'
 REACH = './zasieg_medium.xlsx'
-BROADCASTER = './wydawca_nadawca.xlsx'
+EMMITER = './wydawca_nadawca.xlsx'
