@@ -6,6 +6,7 @@ import time
 import os
 import sys
 
+
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 
@@ -536,6 +537,8 @@ df = pd.concat(dfs, ignore_index=True)
 del dfs
 df = df.astype({'Dzień': 'category', 'Nr. tyg.': 'category', 'Miesiąc': 'category',
                 'Wydawca/Nadawca': 'category', 'Godzina bloku reklamowego': 'object'})
+df['Wydawca/Nadawca'] = df['Wydawca/Nadawca'].str.upper() # new, upper added
+df['Submedium'] = df['Submedium'].str.upper()  # new, upper added
 df.sort_values(by='Data', axis=0, inplace=True)
 df.reset_index(inplace=True)
 df.drop('index', axis=1, inplace=True)
