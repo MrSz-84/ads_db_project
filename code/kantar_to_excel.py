@@ -17,8 +17,11 @@ path = find.find(cf.FILE_PATH)
 # tworzenie dataframe
 # Dataframe creation
 df = pd.read_excel(path, sheet_name='Raport')
-df_wyd = pd.read_excel(cf.BROADCASTER)
+df_wyd = pd.read_excel(cf.EMMITER)
+df_wyd['Submedium'] = df_wyd['Submedium'].str.upper()  # new
+df_wyd['Wydawca/Nadawca'] = df_wyd['Wydawca/Nadawca'].str.upper()   # new
 df_zas = pd.read_excel(cf.REACH)
+df_zas['Submedium'] = df_zas['Submedium'].str.upper()   # new
 
 print('DataFrame has been created...')
 
@@ -81,6 +84,7 @@ polskie_dni_tyg = {
 df['Start'] = pd.to_datetime(df['Start'], format='%H:%M:%S')
 locale.setlocale(locale.LC_TIME, 'pl_PL.utf8')
 df.rename(columns={'Medium': 'Submedium'}, inplace=True)
+df['Submedium'] = df['Submedium'].str.upper()   # new
 df['Dzień'] = df['Data'].dt.day.astype('int')
 df['Dzień tygodnia'] = df['Data'].dt.day_name()
 df['Dzień tygodnia'] = df['Dzień tygodnia'].map(polskie_dni_tyg)
@@ -113,6 +117,3 @@ with pd.ExcelWriter('#kantar_output.xlsx', mode='w', engine='xlsxwriter', date_f
     print(f'Saved to a file "#kantar_output.xlsx" ...')
 
 print('Program has ended.')
-
-
-
