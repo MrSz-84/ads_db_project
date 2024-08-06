@@ -67,7 +67,7 @@ def get_newest(lst: list[dict]) -> list[dict]:
 
     enumerated = []
     for idx, item in list(enumerate(lst)):
-        if item['name'].endswith('.xlsx') and ('TV' in item['name'] or 'Radio' in item['name']):
+        if item['name'].endswith('.xlsx') and ('TV' in item['name'] or 'Radio' in item['name']) and not '~$' in item['name']:
             enumerated.append({'idx': idx, "item": item})
     return sorted(enumerated, key=lambda x: x['item']['timestamp'], reverse=True)
 
